@@ -1,36 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>YouTube Thumbnail Guides & Resources | ThumbnailSnaps Blog</title>
-<meta name="description" content="Explore detailed guides about YouTube thumbnail sizes, max resolution formats, and best practices. Learn how to download YouTube thumbnails in HD and optimize them effectively.">
+<title>Free YouTube Thumbnail Downloader (HD, 1080p, Max Resolution) | ThumbnailSnaps</title>
+
+<meta name="description" content="Free YouTube Thumbnail Downloader. Download YouTube thumbnails in HD, 1080p, and maximum resolution instantly. No watermark, no signup required. Works on mobile & desktop.">
+
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://thumbnailsnaps.com/blog/">
 
-<!-- Open Graph -->
-<meta property="og:title" content="YouTube Thumbnail Guides & Resources | ThumbnailSnaps Blog">
-<meta property="og:description" content="Detailed guides on YouTube thumbnail sizes, maxresdefault, HD downloads, and optimization tips.">
+<meta property="og:title" content="Free YouTube Thumbnail Downloader (HD, 1080p, Max Resolution)">
+<meta property="og:description" content="Download YouTube thumbnails in HD and maximum resolution instantly.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://thumbnailsnaps.com/blog/">
+<meta property="og:url" content="https://thumbnailsnaps.com/">
 <meta property="og:image" content="https://thumbnailsnaps.com/preview.png">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="shortcut icon" href="/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
+<link rel="canonical" href="https://thumbnailsnaps.com/">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta name="theme-color" content="#1a001f">
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ================= SCHEMA ================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ThumbnailSnaps - Free YouTube Thumbnail Downloader",
+  "url": "https://thumbnailsnaps.com/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "All",
+  "description": "Free YouTube thumbnail downloader to download thumbnails in HD, 1080p and maximum resolution.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ThumbnailSnaps",
+  "url": "https://thumbnailsnaps.com",
+  "logo": "https://thumbnailsnaps.com/favicon.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this tool free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Thumbnailsnaps is completely free to use. No signup or login required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the highest resolution available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The maximum available resolution is usually 1280x720 (Ultra High), depending on the original video upload."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I download a YouTube thumbnail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paste the YouTube video URL into the input box and click Get Thumbnail. Then download your preferred resolution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download YouTube thumbnails in 4K resolution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YouTube typically does not generate 4K thumbnails. The highest available resolution is usually 1280x720."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool work on mobile devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Thumbnailsnaps works on mobile, tablet, and desktop browsers."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 body { font-family: 'Inter', sans-serif; }
 .gradient-bg { background: radial-gradient(circle at top, #1a001f, #0b0b0f 60%); }
-.glow { box-shadow: 0 0 25px rgba(255,0,85,0.4); }
+.glow { box-shadow: 0 0 20px rgba(255,0,85,0.35); }
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
 </style>
+
 </head>
 
-<body class="gradient-bg text-white pt-24 overflow-x-hidden">
+<body class="gradient-bg text-white overflow-x-hidden">
 
 <!-- ================= NAVBAR ================= -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#1a001f] via-[#120012] to-black shadow-md backdrop-blur-sm">
@@ -89,72 +179,486 @@ body { font-family: 'Inter', sans-serif; }
 
 </nav>
 
-<!-- HERO -->
-<section class="text-center py-20 px-6">
-  <h1 class="text-3xl md:text-5xl font-bold mb-6">
-    YouTube Thumbnail <span class="text-pink-500">Guides & Resources</span>
-  </h1>
-  <p class="text-gray-400 max-w-2xl mx-auto">
-    Explore in-depth guides about YouTube thumbnail sizes, resolution formats, and best practices for downloading HD thumbnails.
-  </p>
+<!-- ================= HERO ================= -->
+<!-- <section id="home" class="relative text-center pt-28 sm:pt-32 pb-20 px-4 sm:px-6 lg:px-8"> -->
+<section id="home" class="relative text-center pt-24 sm:pt-28 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+               font-bold leading-snug sm:leading-tight 
+               max-w-4xl mx-auto mb-6 tracking-tight">
+
+        Download Free YouTube Thumbnails in 
+
+        <span class="bg-gradient-to-r from-pink-500 to-purple-400 
+                     bg-clip-text text-transparent block sm:inline">
+            HD & Max Resolution
+        </span>
+
+    </h1>
+
+    <!-- Subtext -->
+    <p class="text-gray-400 
+              text-base sm:text-lg md:text-xl 
+              max-w-2xl mx-auto 
+              leading-relaxed 
+              mb-10 px-2 sm:px-0">
+
+        Use our free YouTube Thumbnail Downloader to instantly download thumbnails in HD, 1080p and maximum resolution in seconds.
+        100% Free. No signup required.
+
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row 
+                justify-center items-center 
+                gap-4 sm:gap-6 
+                w-full max-w-md sm:max-w-none mx-auto">
+
+        <!-- Primary Button -->
+        <a href="#tool"
+           class="w-full sm:w-auto text-center
+                  bg-gradient-to-r from-pink-600 to-pink-500
+                  hover:from-pink-500 hover:to-pink-400
+                  px-8 py-3 rounded-full
+                  text-sm sm:text-base font-semibold
+                  shadow-md shadow-pink-500/20
+                  transition duration-300 transform hover:scale-105">
+            Get Thumbnail
+        </a>
+
+        <!-- Secondary Button -->
+        <a href="/blog/"
+           class="w-full sm:w-auto text-center
+                  border border-pink-500 text-pink-400
+                  px-8 py-3 rounded-full
+                  text-sm sm:text-base font-medium
+                  hover:bg-pink-500/10
+                  transition duration-300">
+            Learn More
+        </a>
+
+    </div>
+
 </section>
 
-<!-- TOP AD -->
-<section class="max-w-4xl mx-auto px-6 mb-12">
-  <div class="bg-[#14141c] p-4 rounded-xl border border-gray-800 text-center text-gray-500">
-      Blog Top Ad Placement
+<!-- ================= TOP AD ================= -->
+<section class="max-w-4xl mx-auto px-4 sm:px-6 mb-12">
+
+  <!-- Fixed Height to Prevent CLS -->
+  <div class="bg-[#14141c] rounded-xl border border-gray-800 
+              flex items-center justify-center 
+              text-gray-500 text-sm
+              h-[100px] sm:h-[90px]">
+
+      <!-- 320x100 Mobile | 728x90 Desktop -->
+      Top Ad Placement
+
   </div>
+
 </section>
 
-<!-- BLOG GRID -->
-<section class="py-16 px-6">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
 
-    <!-- Article 1 -->
-    <div class="bg-[#2a0018] p-6 rounded-2xl border border-pink-500 hover:border-pink-400 transition">
-      <h2 class="text-xl font-semibold text-white mb-4">
-        <a href="/blog/how-to-download-youtube-thumbnail.html" class="hover:text-pink-500 transition">
-          How to Download YouTube Thumbnails (Step-by-Step Guide)
-        </a>
-      </h2>
-      <p class="text-gray-300 text-sm">
-        Learn how to download YouTube thumbnails in HD and maximum resolution using simple and safe methods.
-      </p>
-    </div>
 
-    <!-- Article 2 -->
-    <div class="bg-[#2a0018] p-6 rounded-2xl border border-pink-500 hover:border-pink-400 transition">
-      <h2 class="text-xl font-semibold text-white mb-4">
-        <a href="/blog/youtube-thumbnail-size-guide.html" class="hover:text-pink-500 transition">
-          YouTube Thumbnail Size Guide (2026 Updated)
-        </a>
-      </h2>
-      <p class="text-gray-300 text-sm">
-        Discover the correct YouTube thumbnail dimensions, resolution formats, and design best practices.
-      </p>
-    </div>
+<!-- ================= TOOL ================= -->
+<section id="tool" class="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
 
-    <!-- Article 3 -->
-    <div class="bg-[#2a0018] p-6 rounded-2xl border border-pink-500 hover:border-pink-400 transition">
-      <h2 class="text-xl font-semibold text-white mb-4">
-        <a href="/blog/maxresdefault-explained.html" class="hover:text-pink-500 transition">
-          What is Maxresdefault? Full Explanation
-        </a>
+  <div class="relative p-[2px] rounded-3xl 
+              bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500">
+
+    <div class="bg-[#14141c] p-6 sm:p-8 rounded-3xl">
+
+      <!-- Heading -->
+      <h2 class="text-xl sm:text-2xl font-semibold mb-6 text-center tracking-tight">
+        Paste YouTube URL
       </h2>
-      <p class="text-gray-300 text-sm">
-        Understand maxresdefault thumbnails, resolution differences, and why some videos don’t show max resolution.
-      </p>
+
+      <!-- INPUT WRAPPER -->
+      <div class="relative w-full mb-5">
+
+        <input 
+            type="text" 
+            id="youtubeUrl"
+            placeholder="https://www.youtube.com/watch?v=..."
+            class="w-full p-4 pr-12 rounded-xl
+                   bg-[#1f1f2a] border border-gray-700
+                   focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30
+                   outline-none transition duration-200
+                   text-sm sm:text-base"
+        >
+
+        <!-- CLEAR BUTTON -->
+<button 
+    id="clearBtn"
+    type="button"
+    class="hidden absolute right-3 top-1/2 -translate-y-1/2
+           flex items-center justify-center
+           w-9 h-9
+           rounded-md
+           bg-[#1f1f2a]
+           border border-gray-700
+           text-gray-400
+           hover:border-gray-500
+           hover:text-white
+           hover:bg-[#262636]
+           transition-all duration-200">
+
+    ✕
+
+</button>
+
+      </div>
+
+      <!-- GET BUTTON -->
+      <button 
+          onclick="generateThumbnail()" 
+          class="w-full bg-pink-600 hover:bg-pink-700
+                 py-3 rounded-xl
+                 text-sm sm:text-base font-semibold
+                 transition duration-300 shadow-md shadow-pink-500/20">
+          Get Thumbnail
+      </button>
+
+      <!-- Error -->
+      <div id="error" class="text-red-500 mt-4 text-center text-sm"></div>
+
+      <!-- Results -->
+      <div id="results" class="mt-8 grid gap-6"></div>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- INTERNAL TOOL CTA -->
-<section class="text-center pb-20">
-  <a href="/#tool"
-     class="bg-pink-600 hover:bg-pink-700 px-8 py-3 rounded-full text-sm glow">
-     Try Free YouTube Thumbnail Downloader
-  </a>
+<!-- ================= MIDDLE AD ================= -->
+<section class="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
+
+  <!-- Fixed Height for CLS Safety -->
+  <div class="bg-[#14141c] rounded-xl border border-gray-800 
+              flex items-center justify-center 
+              text-gray-500 text-sm
+              h-[100px] sm:h-[90px]">
+
+      Middle Ad Placement
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= FEATURES ================= -->
+<section id="features" class="py-24 px-4 sm:px-6 text-center">
+
+  <!-- Section Heading -->
+  <h2 class="text-2xl sm:text-3xl md:text-4xl 
+             font-bold mb-16 tracking-tight">
+
+    Why Use Thumbnail<span class="text-pink-500">Snaps</span>?
+
+  </h2>
+
+  <!-- Responsive Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+              gap-8 sm:gap-10
+              max-w-6xl mx-auto">
+
+    <!-- Box 1 -->
+    <div class="bg-[#2a0018] p-8 rounded-2xl 
+                border border-pink-500/60
+                transition duration-300
+                hover:scale-105 hover:border-pink-400
+                shadow-md shadow-pink-500/10">
+
+      <h3 class="text-xl font-semibold mb-4 text-white">
+        HD Quality
+      </h3>
+
+      <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+        Download thumbnails in maximum available resolution instantly.
+      </p>
+
+    </div>
+
+
+    <!-- Box 2 -->
+    <div class="bg-[#2a0018] p-8 rounded-2xl 
+                border border-pink-500/60
+                transition duration-300
+                hover:scale-105 hover:border-pink-400
+                shadow-md shadow-pink-500/10">
+
+      <h3 class="text-xl font-semibold mb-4 text-white">
+        Instant Download
+      </h3>
+
+      <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+        No waiting time. Paste URL and download in seconds.
+      </p>
+
+    </div>
+
+
+    <!-- Box 3 -->
+    <div class="bg-[#2a0018] p-8 rounded-2xl 
+                border border-pink-500/60
+                transition duration-300
+                hover:scale-105 hover:border-pink-400
+                shadow-md shadow-pink-500/10">
+
+      <h3 class="text-xl font-semibold mb-4 text-white">
+        100% Free
+      </h3>
+
+      <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+        Completely free tool with no hidden charges.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SEO CONTENT ================= -->
+<section class="py-24 px-4 sm:px-6">
+
+  <div class="max-w-4xl mx-auto">
+
+    <div class="bg-[#2a0018] p-6 sm:p-10 lg:p-12 
+                rounded-2xl border border-pink-500/60 
+                text-gray-300 leading-relaxed">
+
+      <!-- Main Heading -->
+      <h2 class="text-2xl sm:text-3xl md:text-4xl 
+                 font-bold text-white mb-8 text-center tracking-tight">
+
+        How to Download YouTube Thumbnails in HD & 4K Resolution
+
+      </h2>
+
+      <!-- Paragraph 1 -->
+      <p class="mb-6 text-sm sm:text-base md:text-lg">
+        ThumbnailSnaps allows you to download YouTube thumbnails in HD, 1080p, and maximum available resolution instantly. 
+        Every YouTube video automatically generates multiple thumbnail sizes. Using our free YouTube thumbnail downloader, 
+        you can access these images without watermark and without signup.
+      </p>
+
+      <!-- Paragraph 2 -->
+      <p class="mb-8 text-sm sm:text-base md:text-lg">
+        Simply copy the YouTube video URL, paste it into the input box above, and click the 
+        <strong>“Get Thumbnail”</strong> button. The tool fetches publicly available thumbnail images 
+        directly from YouTube’s official image servers.
+      </p>
+
+      <!-- Subheading -->
+      <h3 class="text-xl sm:text-2xl font-semibold text-white mt-12 mb-5">
+        YouTube Thumbnail Resolutions Explained
+      </h3>
+
+      <ul class="space-y-3 mb-10 text-sm sm:text-base">
+        <li><strong>Ultra High (1280×720 – maxresdefault):</strong> Highest available HD resolution.</li>
+        <li><strong>High Quality (640×480 – sddefault):</strong> Standard HD preview.</li>
+        <li><strong>Medium Quality (480×360 – hqdefault):</strong> Common resolution.</li>
+        <li><strong>Standard (320×180 – mqdefault):</strong> Smaller preview size.</li>
+        <li><strong>Low Quality (120×90 – default):</strong> Minimal resolution thumbnail.</li>
+      </ul>
+
+      <!-- Subheading -->
+      <h3 class="text-xl sm:text-2xl font-semibold text-white mt-12 mb-5">
+        Can You Download YouTube Thumbnail in 4K?
+      </h3>
+
+      <p class="mb-8 text-sm sm:text-base md:text-lg">
+        YouTube typically does not generate 4K thumbnails. The maximum resolution available for most videos 
+        is 1280×720 pixels (HD). If a video does not provide a maximum resolution thumbnail, 
+        our tool automatically falls back to the next available quality.
+      </p>
+
+      <!-- Subheading -->
+      <h3 class="text-xl sm:text-2xl font-semibold text-white mt-12 mb-5">
+        Why Use ThumbnailSnaps?
+      </h3>
+
+      <ul class="space-y-3 mb-8 text-sm sm:text-base">
+        <li>✔ 100% Free YouTube Thumbnail Downloader</li>
+        <li>✔ No watermark on images</li>
+        <li>✔ Instant download</li>
+        <li>✔ No registration required</li>
+        <li>✔ Works on mobile, tablet, and desktop</li>
+      </ul>
+
+      <!-- Internal Link -->
+      <p class="text-sm sm:text-base">
+        For detailed resolution breakdown, check our 
+        <a href="/blog/youtube-thumbnail-size-guide.html" 
+           class="text-pink-500 hover:text-pink-400 transition font-medium">
+           YouTube Thumbnail Size Guide
+        </a>.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+<section id="faqs" class="py-24 px-4 sm:px-6">
+
+  <div class="max-w-4xl mx-auto">
+
+    <div class="bg-[#2a0018] p-6 sm:p-10 lg:p-12 
+                rounded-2xl border border-pink-500/60">
+
+      <!-- Section Heading -->
+      <h2 class="text-2xl sm:text-3xl md:text-4xl 
+                 font-bold mb-12 text-white text-center tracking-tight">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="space-y-4">
+
+        <!-- FAQ ITEM -->
+        <div class="faq-item border border-pink-500/60 rounded-xl overflow-hidden">
+
+          <button class="faq-question w-full flex justify-between items-center 
+                         px-5 sm:px-6 py-4 text-left text-white font-semibold
+                         text-sm sm:text-base">
+
+            Is this tool free?
+            <span class="faq-arrow transition-transform duration-300">▼</span>
+
+          </button>
+
+          <div class="faq-answer hidden px-5 sm:px-6 pb-4 text-gray-300 text-sm sm:text-base">
+            Yes, Thumbnailsnaps is completely free to use. No signup or login required.
+          </div>
+
+        </div>
+
+
+        <!-- FAQ ITEM -->
+        <div class="faq-item border border-pink-500/60 rounded-xl overflow-hidden">
+
+          <button class="faq-question w-full flex justify-between items-center 
+                         px-5 sm:px-6 py-4 text-left text-white font-semibold
+                         text-sm sm:text-base">
+
+            What is the highest resolution available?
+            <span class="faq-arrow transition-transform duration-300">▼</span>
+
+          </button>
+
+          <div class="faq-answer hidden px-5 sm:px-6 pb-4 text-gray-300 text-sm sm:text-base">
+            The maximum available resolution is usually 1280×720 (Ultra High), depending on the original video upload.
+          </div>
+
+        </div>
+
+
+        <!-- FAQ ITEM -->
+        <div class="faq-item border border-pink-500/60 rounded-xl overflow-hidden">
+
+          <button class="faq-question w-full flex justify-between items-center 
+                         px-5 sm:px-6 py-4 text-left text-white font-semibold
+                         text-sm sm:text-base">
+
+            Do I need to create an account?
+            <span class="faq-arrow transition-transform duration-300">▼</span>
+
+          </button>
+
+          <div class="faq-answer hidden px-5 sm:px-6 pb-4 text-gray-300 text-sm sm:text-base">
+            No, our tool works instantly without requiring any registration.
+          </div>
+
+        </div>
+
+
+        <!-- FAQ ITEM -->
+        <div class="faq-item border border-pink-500/60 rounded-xl overflow-hidden">
+
+          <button class="faq-question w-full flex justify-between items-center 
+                         px-5 sm:px-6 py-4 text-left text-white font-semibold
+                         text-sm sm:text-base">
+
+            Do you store downloaded thumbnails?
+            <span class="faq-arrow transition-transform duration-300">▼</span>
+
+          </button>
+
+          <div class="faq-answer hidden px-5 sm:px-6 pb-4 text-gray-300 text-sm sm:text-base">
+            No, we do not store or host any thumbnails. Images are directly fetched from YouTube's official servers.
+          </div>
+
+        </div>
+
+
+        <!-- FAQ ITEM -->
+        <div class="faq-item border border-pink-500/60 rounded-xl overflow-hidden">
+
+          <button class="faq-question w-full flex justify-between items-center 
+                         px-5 sm:px-6 py-4 text-left text-white font-semibold
+                         text-sm sm:text-base">
+
+            Is ThumbnailSnaps affiliated with YouTube?
+            <span class="faq-arrow transition-transform duration-300">▼</span>
+
+          </button>
+
+          <div class="faq-answer hidden px-5 sm:px-6 pb-4 text-gray-300 text-sm sm:text-base">
+            No, ThumbnailSnaps is not affiliated with YouTube or Google in any way.
+          </div>
+
+        </div>
+
+
+        <!-- FAQ ITEM -->
+        <div class="faq-item border border-pink-500/60 rounded-xl overflow-hidden">
+
+          <button class="faq-question w-full flex justify-between items-center 
+                         px-5 sm:px-6 py-4 text-left text-white font-semibold
+                         text-sm sm:text-base">
+
+            How do I download a YouTube thumbnail?
+            <span class="faq-arrow transition-transform duration-300">▼</span>
+
+          </button>
+
+          <div class="faq-answer hidden px-5 sm:px-6 pb-4 text-gray-300 text-sm sm:text-base">
+            Paste the YouTube video URL into the input box and click “Get Thumbnail”. Then download your preferred resolution.
+          </div>
+
+        </div>
+
+
+        <!-- FAQ ITEM -->
+        <div class="faq-item border border-pink-500/60 rounded-xl overflow-hidden">
+
+          <button class="faq-question w-full flex justify-between items-center 
+                         px-5 sm:px-6 py-4 text-left text-white font-semibold
+                         text-sm sm:text-base">
+
+            Does this tool work on mobile devices?
+            <span class="faq-arrow transition-transform duration-300">▼</span>
+
+          </button>
+
+          <div class="faq-answer hidden px-5 sm:px-6 pb-4 text-gray-300 text-sm sm:text-base">
+            Yes, ThumbnailSnaps works on mobile, tablet, and desktop browsers.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -198,6 +702,8 @@ body { font-family: 'Inter', sans-serif; }
   </div>
 
 </footer>
+
 <script src="/script.js" defer></script>
+
 </body>
 </html>
