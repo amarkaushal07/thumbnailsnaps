@@ -161,11 +161,21 @@ function changeQuality(videoId, qualityFile, btn) {
 
 
 /* ---------- Download Image (CORS Safe) ---------- */
-function downloadImage(url, filename) {
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename + ".jpg";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+async function downloadImage(url, filename) {
+    try {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = blobUrl;
+        a.download = filename + ".jpg";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        window.URL.revokeObjectURL(blobUrl);
+    } catch (err) {
+        alert("Download failed. Try again.");
+    }
 }
